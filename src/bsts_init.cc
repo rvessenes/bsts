@@ -24,7 +24,8 @@ SEXP analysis_common_r_predict_bsts_model_(
     SEXP r_bsts_object,
     SEXP r_prediction_data,
     SEXP r_burn,
-    SEXP r_observed_data);
+    SEXP r_observed_data,
+    SEXP r_seed);
 
 SEXP analysis_common_r_bsts_one_step_prediction_errors_(
     SEXP r_bsts_object,
@@ -50,7 +51,7 @@ SEXP analysis_common_r_bsts_fit_mixed_frequency_model_(
 
 static R_CallMethodDef bsts_arg_description[] = {
   CALLDEF(analysis_common_r_fit_bsts_model_, 11),
-  CALLDEF(analysis_common_r_predict_bsts_model_, 4),
+  CALLDEF(analysis_common_r_predict_bsts_model_, 5),
   CALLDEF(analysis_common_r_bsts_one_step_prediction_errors_, 2),
   CALLDEF(analysis_common_r_bsts_aggregate_time_series_, 3),
   CALLDEF(analysis_common_r_bsts_fit_mixed_frequency_model_, 11),

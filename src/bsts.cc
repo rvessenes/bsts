@@ -161,8 +161,10 @@ SEXP analysis_common_r_predict_bsts_model_(
     SEXP r_bsts_object,
     SEXP r_prediction_data,
     SEXP r_burn,
-    SEXP r_observed_data) {
+    SEXP r_observed_data,
+    SEXP r_seed) {
   try {
+    BOOM::RInterface::seed_rng_from_R(r_seed);
     std::unique_ptr<ModelManager> model_manager(
         ModelManager::Create(r_bsts_object));
     return BOOM::ToRMatrix(model_manager->Forecast(

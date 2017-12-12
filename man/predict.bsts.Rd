@@ -17,6 +17,7 @@
         olddata = NULL,
         trials.or.exposure = 1,
         quantiles = c(.025, .975),
+        seed=1,
         ...)
 }
 
@@ -83,9 +84,11 @@
     regression term.}
 
   \item{quantiles}{A numeric vector of length 2 giving the lower and
-    upper quantiles to use for the forecast interval estimate.
-  }
+    upper quantiles to use for the forecast interval estimate.}
 
+  \item{seed}{A number used to set the random seed fore reproducible
+    predictions.  Defaults to 1.}
+  
   \item{\dots}{This is a dummy argument included to match the signature
     of the generic \code{\link{predict}} function.  It is not used.}
 

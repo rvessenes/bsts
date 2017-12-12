@@ -6,6 +6,7 @@ predict.bsts <- function(object,
                          olddata = NULL,
                          trials.or.exposure = 1,
                          quantiles = c(.025, .975),
+                         seed=1,
                          ...) {
   ## Args:
   ##   object:  an object of class 'bsts' created using the function 'bsts'
@@ -48,6 +49,7 @@ predict.bsts <- function(object,
   ##     if the model contains a regression term.
   ##   quantiles: A numeric vector of length 2 giving the lower and
   ##     upper quantiles to use for the forecast interval estimate.
+  ##   seed used for reproducibility. 
   ##   ...: Not used.  Present to match the signature of the default
   ##     predict method.
   ##
@@ -83,6 +85,7 @@ predict.bsts <- function(object,
                                    prediction.data,
                                    burn,
                                    olddata,
+                                   seed,
                                    PACKAGE = "bsts")
 
   ans <- list("mean" = colMeans(predictive.distribution),
